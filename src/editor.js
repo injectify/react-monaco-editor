@@ -75,7 +75,7 @@ class MonacoEditor extends React.Component {
     // Checking that the process is a renderer may be overly specific
     const inElectron = context.process && context.process.type === 'renderer';
 
-    let loaderUrl = requireConfig.url || 'static/vs/loader.js';
+    let loaderUrl = requireConfig.url || '/static/vs/loader.js';
 
     if (inElectron) {
       // Running in electron, need to deal with the difference between node require and AMDRequire
@@ -118,7 +118,7 @@ class MonacoEditor extends React.Component {
       }
 
       // Load monaco
-      context.require(['static/vs/editor/editor.main'], () => {
+      context.require(['/static/vs/editor/editor.main'], () => {
         this.initMonaco();
       });
 
