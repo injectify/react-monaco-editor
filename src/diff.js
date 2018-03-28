@@ -72,7 +72,7 @@ class MonacoDiffEditor extends React.Component {
       return;
     }
     const { requireConfig } = this.props;
-    const loaderUrl = requireConfig.url || 'vs/loader.js';
+    const loaderUrl = requireConfig.url || 'static/vs/loader.js';
     const onGotAmdLoader = () => {
       if (context.__REACT_MONACO_EDITOR_LOADER_ISPENDING__) {
         // Do not use webpack
@@ -82,7 +82,7 @@ class MonacoDiffEditor extends React.Component {
       }
 
       // Load monaco
-      context.require(['vs/editor/editor.main'], () => {
+      context.require(['static/vs/editor/editor.main'], () => {
         this.initMonaco();
       });
 
